@@ -8,4 +8,4 @@ window.sitePricing = {
 
 // Aşağıdaki telefon numarasını ülke koduyla doldurun, ardından index.html içindeki tüm WhatsApp linkleri otomatik güncellenebilir bir sisteme geçirilebilir.
 // Bu basit sürümde linkler statik. Dilerseniz burada global bir değişken tanımlayıp dinamik set edebilirsiniz:
-// window.whatsapp = "90XXXXXXXXXX";
+// window.whatsapp = "905437837518";
