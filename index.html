@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PC Kiralama — 5600G APU | 16GB RAM | 7/24 Erişim</title>
+  <meta name="description" content="Knight Online, Metin2 gibi hafif oyunlar için uzaktan erişimli PC kiralama. 5600G APU, 16GB RAM, SSD. 7/24 aktif, bot kurulumu serbest.">
+  <meta property="og:title" content="PC Kiralama — 5600G APU | 16GB RAM | 7/24 Erişim">
+  <meta property="og:description" content="Knight Online & Metin2 için uygun fiyatlı, 7/24 uzaktan erişimli PC. Bot kurulumu serbest.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="tr_TR">
+  <meta name="theme-color" content="#111827">
+  <link rel="icon" href="favicon.svg">
+  <style>
+    :root{
+      --bg:#0b1220; --bg2:#0f172a; --card:#111827; --muted:#9ca3af; --text:#e5e7eb;
+      --accent:#22c55e; --accent-2:#10b981; --border:#1f2937; --danger:#ef4444; --warn:#f59e0b
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Helvetica,Arial,sans-serif;
+      background:linear-gradient(180deg,var(--bg),var(--bg2) 40%); color:var(--text); line-height:1.6}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1100px; margin:0 auto; padding:0 16px}
+    .btn{display:inline-flex; gap:10px; align-items:center; padding:12px 16px; border-radius:12px;
+      border:1px solid var(--border); background:linear-gradient(180deg,#111827,#0b1220); color:var(--text); font-weight:600}
+    .btn.primary{background:linear-gradient(180deg,var(--accent),var(--accent-2)); border-color:rgba(0,0,0,.15); color:#06260f}
+    .btn.secondary{background:#0b1220}
+    header{position:sticky; top:0; z-index:20; backdrop-filter:saturate(140%) blur(10px);
+      background:rgba(11,18,32,.7); border-bottom:1px solid var(--border)}
+    header .bar{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
+    .logo{display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.3px}
+    .logo svg{width:28px;height:28px}
+    .hero{padding:56px 0 24px}
+    .hero h1{font-size:clamp(28px,4vw,44px); margin:0 0 12px; line-height:1.1}
+    .hero p{color:var(--muted); margin:0 0 20px}
+    .pill{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border:1px solid var(--border); border-radius:999px; color:var(--muted); font-size:14px}
+    .grid{display:grid; gap:16px}
+    .grid.cards{grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); margin:24px 0}
+    .card{background:linear-gradient(180deg,#0b1220,#0f172a); border:1px solid var(--border); border-radius:18px; padding:18px}
+    .card h3{margin:0 0 8px}
+    .specs{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin-top:12px}
+    .spec{background:#0c1424; border:1px dashed var(--border); border-radius:12px; padding:12px; color:#cbd5e1}
+    .section{padding:36px 0}
+    .section h2{margin:0 0 8px; font-size:clamp(22px,3vw,32px)}
+    .muted{color:var(--muted)}
+    .pricing{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px}
+    .price-card{border:1px solid var(--border); background:linear-gradient(180deg,#0b1220,#0f172a); border-radius:18px; padding:18px}
+    .price{font-size:28px; font-weight:800}
+    .kicker{font-size:13px; color:var(--muted)}
+    ul{margin:10px 0; padding-left:18px}
+    li{margin:6px 0}
+    .how{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px}
+    .step{border:1px solid var(--border); border-radius:14px; padding:14px; background:#0c1424}
+    .faq details{border:1px solid var(--border); border-radius:14px; padding:12px 14px; background:#0c1424}
+    .faq details+details{margin-top:10px}
+    .faq summary{cursor:pointer; font-weight:600}
+    .cta{display:flex; flex-wrap:wrap; gap:12px; align-items:center}
+    footer{padding:26px 0; border-top:1px solid var(--border); color:#94a3b8; font-size:14px}
+    .badge{display:inline-flex; align-items:center; gap:8px; font-size:13px; padding:6px 10px; border:1px solid var(--border); border-radius:999px}
+    .ok{color:#16a34a} .warn{color:#f59e0b} .no{color:#ef4444}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+    .center{text-align:center}
+    .contact-card{display:grid; grid-template-columns:1fr; gap:10px}
+    .contact-card .btn{justify-content:center}
+    .note{font-size:12px; color:#94a3b8}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container bar">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.88L18.18 22 12 18.56 5.82 22 7 14.15l-5-4.88 6.91-1.01L12 2z" fill="currentColor"/>
+        </svg>
+        <span>PC Kiralama</span>
+      </div>
+      <nav class="cta">
+        <a class="btn secondary" href="#fiyat">Fiyatlar</a>
+        <a class="btn primary" href="https://wa.me/90XXXXXXXXXX?text=Merhaba%2C%20PC%20kiralamak%20istiyorum.%20Plan%20ve%20m%C3%BCsaitlik%20bilgisi%20alabilir%20miyim%3F" target="_blank" rel="noopener">WhatsApp'tan Yaz</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <span class="pill">Knight Online • Metin2 • Hafif Oyunlar • Bot serbest ✅</span>
+      <h1>Uygun Fiyatlı Uzaktan <span class="mono">PC Kiralama</span> — <span class="ok">7/24 Açık</span></h1>
+      <p>5600G APU + 16GB RAM + NVMe SSD. İstanbul lokasyon. RDP/Parsec ile bağlan, <b>bot/otomasyon kur</b>, bırak çalışsın.</p>
+      <div class="cta">
+        <a class="btn primary" href="#fiyat">Planları Gör</a>
+        <a class="btn" href="#ozellikler">Teknik Özellikler</a>
+      </div>
+
+      <div class="specs">
+        <div class="spec">🧠 <b>CPU/GPU:</b> Ryzen 5 5600G APU</div>
+        <div class="spec">🧵 <b>RAM:</b> 16GB DDR4</div>
+        <div class="spec">⚡ <b>Disk:</b> NVMe SSD</div>
+        <div class="spec">🌐 <b>Erişim:</b> RDP / Parsec / AnyDesk</div>
+        <div class="spec">🕒 <b>Uptime:</b> 7/24 — elektrik + UPS</div>
+        <div class="spec">📍 <b>Lokasyon:</b> İstanbul, Türkiye</div>
+      </div>
+    </section>
+
+    <section id="ozellikler" class="section container">
+      <h2>Ne Sunuyoruz?</h2>
+      <p class="muted">Hafif/orta seviye oyunlar ve otomasyon süreçleri için stabil, erişilebilir ve net kurallı bir altyapı.</p>
+
+      <div class="grid cards">
+        <div class="card">
+          <h3>🎯 Hedef Kullanım</h3>
+          <ul>
+            <li>Knight Online, Metin2, Silkroad gibi oyunlar</li>
+            <li>Bot/otomasyon yazılımları (kullanıcı sorumluluğunda)</li>
+            <li>Uzak masaüstüyle hafif işler</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>🔒 İzolasyon & Güvenlik</h3>
+          <ul>
+            <li>Size özel Windows hesabı</li>
+            <li>Her kiralamada temiz profil</li>
+            <li>Temel antivirüs + firewall</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>⚙️ Kurulum & Yardım</h3>
+          <ul>
+            <li>RDP/Parsec bağlantı rehberi</li>
+            <li>İlk kurulumda 10 dk destek</li>
+            <li>İsteğe bağlı yazılım yükleme</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>📜 Kurallar (Özet)</h3>
+          <ul>
+            <li>Yasalara ve oyunların <span class="mono">ToS</span>’una aykırı işlemler yasaktır</li>
+            <li>DDoS, kripto madenciliği ❌</li>
+            <li>Sistem kaynaklarını aşırı zorlayacak testler ❌</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="fiyat" class="section container">
+      <h2>Fiyatlar</h2>
+      <p class="muted">Toplu alım ve uzun sürelerde ekstra indirim yapıyoruz. WhatsApp’tan yaz, sana özel teklif çıkaralım.</p>
+      <div class="pricing">
+        <div class="price-card">
+          <div class="kicker">Başlangıç</div>
+          <div class="price">₺<span id="p_hour">25</span> <span class="kicker">/ saat</span></div>
+          <ul>
+            <li>Minimum 8 saat</li>
+            <li>RDP / Parsec</li>
+            <li>Temel destek</li>
+          </ul>
+          <a class="btn primary" href="https://wa.me/90XXXXXXXXXX?text=Merhaba%2C%20Saatlik%20PC%20kiralama%20i%C3%A7in%20m%C3%BCsaitlik%20var%20m%C4%B1%3F" target="_blank" rel="noopener">WhatsApp ile Başla</a>
+        </div>
+        <div class="price-card">
+          <div class="kicker">Günlük</div>
+          <div class="price">₺<span id="p_day">150</span> <span class="kicker">/ gün</span></div>
+          <ul>
+            <li>24 saat kesintisiz</li>
+            <li>Temiz profil</li>
+            <li>Hızlı destek</li>
+          </ul>
+          <a class="btn primary" href="https://wa.me/90XXXXXXXXXX?text=Merhaba%2C%20G%C3%BCnl%C3%BCk%20PC%20kiralama%20istiyorum." target="_blank" rel="noopener">Günlük Ayırt</a>
+        </div>
+        <div class="price-card">
+          <div class="kicker">Haftalık</div>
+          <div class="price">₺<span id="p_week">900</span> <span class="kicker">/ hafta</span></div>
+          <ul>
+            <li>7/24 açık</li>
+            <li>Öncelikli destek</li>
+            <li>İsteğe bağlı yazılım kurulumu</li>
+          </ul>
+          <a class="btn primary" href="https://wa.me/90XXXXXXXXXX?text=Merhaba%2C%20Haftal%C4%B1k%20PC%20kiralama%20istiyorum." target="_blank" rel="noopener">Haftalık Ayırt</a>
+        </div>
+        <div class="price-card">
+          <div class="kicker">Aylık</div>
+          <div class="price">₺<span id="p_month">3200</span> <span class="kicker">/ ay</span></div>
+          <ul>
+            <li>Sabit makine & kullanıcı</li>
+            <li>Temel izleme (uptime)</li>
+            <li>Öncelikli destek</li>
+          </ul>
+          <a class="btn primary" href="https://wa.me/90XXXXXXXXXX?text=Merhaba%2C%20Ayl%C4%B1k%20PC%20kiralama%20istiyorum." target="_blank" rel="noopener">Aylık Ayırt</a>
+        </div>
+      </div>
+      <p class="note">* Fiyatlar örnektir. Kendi fiyatlarını <span class="mono">/config.js</span> üzerinden değiştirebilirsin.</p>
+    </section>
+
+    <section class="section container">
+      <h2>Nasıl Çalışır?</h2>
+      <div class="how">
+        <div class="step"><b>1) İletişim</b><br>WhatsApp’tan yaz, müsaitlik ve fiyatı netleştirelim.</div>
+        <div class="step"><b>2) Ödeme</b><br>Havale/FAST veya IBAN’a ödeme. Fatura opsiyonel.</div>
+        <div class="step"><b>3) Erişim</b><br>RDP/Parsec bilgilerini gönderiyoruz. Bağlan ve kullanmaya başla.</div>
+      </div>
+    </section>
+
+    <section class="section container faq">
+      <h2>SSS</h2>
+      <details>
+        <summary>Bot kurabilir miyim?</summary>
+        <p>Evet, kendi sorumluluğunuzda olmak üzere bot/otomasyon kurulabilir. Ancak <b>yasa dışı</b> işlemler, hizmet reddi saldırıları, kripto madenciliği ve oyunların Hizmet Şartları’na aykırı aktiviteler yasaktır.</p>
+      </details>
+      <details>
+        <summary>Hangi bağlantı yöntemleri var?</summary>
+        <p>Varsayılan olarak <b>Windows Uzak Masaüstü (RDP)</b>. Düşük gecikme isterseniz Parsec kurabiliriz. AnyDesk desteklenir.</p>
+      </details>
+      <details>
+        <summary>Gecikme ve hız nasıl?</summary>
+        <p>Makine İstanbul’da barınır; Türkiye içi bağlantılarda gecikme düşüktür. İnternet hızınız ve konumunuza göre değişebilir.</p>
+      </details>
+      <details>
+        <summary>Yedekleme yapılıyor mu?</summary>
+        <p>Kullanıcı verileri periyodik olarak <b>yedeklenmez</b>. Önemli dosyalarınızı kendi bulutunuza kaydetmenizi öneririz.</p>
+      </details>
+      <details>
+        <summary>İade politikası?</summary>
+        <p>Başlangıçtan sonraki ilk 1 saat içinde ciddi bağlantı sorunu varsa ücret iadesi değerlendirilir.</p>
+      </details>
+    </section>
+
+    <section class="section container">
+      <div class="grid cards">
+        <div class="card contact-card">
+          <h3>İletişim</h3>
+          <p class="muted">WhatsApp’tan yazın, 7/24 dönüş yapalım (müsaitlik durumuna göre).</p>
+          <a class="btn primary" href="https://wa.me/90XXXXXXXXXX?text=Merhaba%2C%20PC%20kiralama%20i%C3%A7in%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn" href="mailto:info@pckiralama.com?subject=PC%20Kiralama&body=Merhaba%2C%20PC%20kiralama%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.">E-posta</a>
+        </div>
+        <div class="card">
+          <h3>Hizmet Koşulları (Özet)</h3>
+          <ul>
+            <li>Yasaya ve üçüncü taraf sözleşmelere (oyun ToS dâhil) uyum zorunlu</li>
+            <li>Madencilik, sızma testleri, spam/DDoS kesinlikle yasaktır</li>
+            <li>Kullanıcı verilerinden kullanıcı sorumludur</li>
+          </ul>
+          <p class="note">Detaylı koşullar ve gizlilik metni için bizimle iletişime geçin.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="yil"></span> PC Kiralama — İstanbul, Türkiye
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script>
+    // Yıl ve fiyatları configten çek
+    document.getElementById('yil').textContent = new Date().getFullYear();
+    (function syncPrices(){
+      if (!window.sitePricing) return;
+      const {hour, day, week, month} = window.sitePricing;
+      if (hour) document.getElementById('p_hour').textContent = hour;
+      if (day) document.getElementById('p_day').textContent = day;
+      if (week) document.getElementById('p_week').textContent = week;
+      if (month) document.getElementById('p_month').textContent = month;
+    })();
+  </script>
+</body>
+</html>
