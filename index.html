@@ -64,6 +64,31 @@
     .contact-card{display:grid; grid-template-columns:1fr; gap:10px}
     .contact-card .btn{justify-content:center}
     .note{font-size:12px; color:#94a3b8}
+    body::before, body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.13;
+  transition: opacity 0.2s;
+}
+body::before {
+  background-image: url('images/knightonline-bg.jpg');
+  background-position: left center;
+  mix-blend-mode: lighten;
+}
+body::after {
+  background-image: url('images/metin2-bg.jpg');
+  background-position: right center;
+  mix-blend-mode: lighten;
+}
+main, header, footer {
+  position: relative;
+  z-index: 1;
+}
   </style>
 </head>
 <body>
