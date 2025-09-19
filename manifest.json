@@ -1,0 +1,12 @@
+{
+  "name": "PC Kiralama",
+  "short_name": "PCKiralama",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#111827",
+  "icons": [
+    {"src":"favicon.svg","sizes":"any","type":"image/svg+xml"}
+  ]
+}
+

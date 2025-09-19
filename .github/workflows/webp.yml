@@ -1,0 +1,38 @@
+name: Generate WebP assets
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install cwebp
+        run: sudo apt-get update && sudo apt-get install -y webp
+      - name: Convert JPG to WebP if not exists
+        shell: bash
+        run: |
+          shopt -s nullglob
+          for f in *.jpg *.jpeg; do
+            [ -e "$f" ] || continue
+            out="${f%.*}.webp"
+            if [ ! -f "$out" ]; then
+              cwebp -q 78 "$f" -o "$out"
+              echo "Created $out"
+            else
+              echo "Skip $out exists"
+            fi
+          done
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add *.webp || true
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "chore: add generated webp assets"
+            git push
+          fi
+

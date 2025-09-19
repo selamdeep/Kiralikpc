@@ -1,0 +1,26 @@
+name: Lighthouse CI
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * *'
+
+jobs:
+  lhci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install Lighthouse CI
+        run: npm i -g @lhci/cli@0.13.x
+      - name: Run Lighthouse on live site
+        run: |
+          lhci autorun --collect.url=https://www.pattyburg.com/ --upload.target=temporary-public-storage || true
+      - name: Print report links
+        run: |
+          echo "Reports uploaded to temporary-public-storage (see job logs)."
+

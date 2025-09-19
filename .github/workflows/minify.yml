@@ -1,0 +1,36 @@
+name: Minify HTML
+
+on:
+  workflow_dispatch:
+
+jobs:
+  minify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install minifiers
+        run: |
+          npm i -g html-minifier-terser@7.2.0 terser@5.x clean-css-cli@5.x
+      - name: Minify HTML/CSS/JS
+        run: |
+          set -e
+          shopt -s nullglob
+          for f in *.html; do html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o "$f" "$f"; done
+          for f in *.css; do cleancss -o "$f" "$f"; done
+          for f in *.js; do terser "$f" -c -m -o "$f"; done
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "chore: minify static assets"
+            git push
+          fi
+
