@@ -32,6 +32,8 @@ self.addEventListener('activate', (event) => {
 // Network-first for HTML, cache-first for others
 self.addEventListener('fetch', (event) => {
   const req = event.request;
+  const url = new URL(req.url);
+  if (url.hostname === 'plausible.io' || url.hostname === 'wa.me') return; // bypass analytics/whatsapp
   const isHTML = req.headers.get('accept')?.includes('text/html');
   if (isHTML) {
     event.respondWith(
@@ -53,11 +55,12 @@ self.addEventListener('fetch', (event) => {
     );
   } else {
     event.respondWith(
-      caches.match(req).then((cached) => cached || fetch(req).then((res) => {
-        const copy = res.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(req, copy));
-        return res;
-      }))
+      caches.match(req).then((cached) => {
+        const fetchPromise = fetch(req).then((res) => {
+          const copy = res.clone(); caches.open(CACHE_NAME).then((cache) => cache.put(req, copy)); return res;
+        });
+        return cached || fetchPromise;
+      })
     );
   }
 });

@@ -18,6 +18,8 @@
   <meta name="twitter:title" content="PC Kiralama — 5600G APU | 16GB RAM | 7/24 Erişim">
   <meta name="twitter:description" content="Knight Online & Metin2 için uygun fiyatlı, 7/24 uzaktan erişimli PC. Bot kurulumu serbest.">
   <meta name="twitter:image" id="twimg" content="https://www.pattyburg.com/knightonline-bg.jpg">
+  <link rel="alternate" hreflang="tr" href="https://www.pattyburg.com/?lang=tr">
+  <link rel="alternate" hreflang="en" href="https://www.pattyburg.com/?lang=en">
   <meta name="theme-color" content="#111827" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="color-scheme" content="light dark">
@@ -346,7 +348,7 @@ main, header, footer {
           card.setAttribute('data-plan', l==='en'? mapEn[planKey]: map[planKey]);
         });
       }
-      var init = (function(){ try{return localStorage.getItem('lang')||'tr';}catch(e){return 'tr';} })();
+      var init = (function(){ try{var u=new URL(location.href);return u.searchParams.get('lang')||localStorage.getItem('lang')||'tr';}catch(e){return 'tr';} })();
       function loadDict(lang){
         return fetch('i18n.'+lang+'.json').then(function(r){return r.ok?r.json():null}).catch(function(){return null});
       }

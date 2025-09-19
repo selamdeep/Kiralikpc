@@ -19,7 +19,13 @@ jobs:
         run: npm i -g @lhci/cli@0.13.x
       - name: Run Lighthouse on live site
         run: |
-          lhci autorun --collect.url=https://www.pattyburg.com/ --upload.target=temporary-public-storage || true
+          lhci autorun \
+            --collect.url=https://www.pattyburg.com/ \
+            --assert.preset=lighthouse:recommended \
+            --assert.assertions.performance=error:0 \
+            --assert.assertions.seo=error:0 \
+            --assert.assertions.accessibility=warn \
+            --upload.target=temporary-public-storage || true
       - name: Print report links
         run: |
           echo "Reports uploaded to temporary-public-storage (see job logs)."
