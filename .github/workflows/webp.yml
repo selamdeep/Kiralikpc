@@ -1,6 +1,8 @@
 name: Generate WebP assets
 
 on:
+  push:
+    branches: [ "main", "master" ]
   workflow_dispatch:
 
 jobs:
