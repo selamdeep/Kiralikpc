@@ -211,12 +211,7 @@
         gap: 32px;
     }
 
-    @media (min-width: 768px) {
-        .configurator {
-            grid-template-columns: 1fr 1.5fr;
-            align-items: center;
-        }
-    }
+
 
     .config-controls {
         display: flex;
