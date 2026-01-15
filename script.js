@@ -188,6 +188,35 @@ function applyPrices(src) {
     render();
     document.addEventListener('prices:updated', render);
 })();
+// PC Configurator Logic
+(function vizConfig() {
+    var slider = document.getElementById('pcSlider');
+    var countEl = document.getElementById('pcCount');
+    var priceEl = document.getElementById('estPrice');
+    var viz = document.getElementById('pcViz');
+    if (!slider) return;
+
+    function update() {
+        var n = parseInt(slider.value);
+        countEl.textContent = n;
+
+        // Pricing Logic
+        // 5+ PCs: 5% discount
+        // 10+ PCs: 10% discount (Max)
+        var unitPrice = 3200;
+        if (n >= 10) {
+            unitPrice *= 0.90;
+        } else if (n >= 5) {
+            unitPrice *= 0.95;
+        }
+
+        priceEl.textContent = Math.floor(n * unitPrice).toLocaleString('tr-TR');
+    }
+
+    slider.addEventListener('input', update);
+    update(); // Init
+})();
+
 // Service Worker kaydı
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {

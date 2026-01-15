@@ -200,6 +200,89 @@
         color: var(--text)
     }
 
+    /* Configurator */
+    .configurator {
+        margin: 40px 0;
+        padding: 24px;
+        background: color-mix(in oklab, var(--bg) 95%, var(--card));
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        display: grid;
+        gap: 32px;
+    }
+
+    @media (min-width: 768px) {
+        .configurator {
+            grid-template-columns: 1fr 1.5fr;
+            align-items: center;
+        }
+    }
+
+    .config-controls {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .config-label {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        font-weight: 700;
+    }
+
+    .config-value {
+        font-size: 24px;
+        color: var(--accent);
+        font-family: var(--mono);
+    }
+
+    .config-price {
+        font-size: 14px;
+        color: var(--muted);
+        text-align: right;
+    }
+
+    /* Custom Slider */
+    .slider {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 8px;
+        border-radius: 4px;
+        background: var(--border);
+        outline: none;
+        transition: background .2s;
+    }
+
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: var(--accent);
+        cursor: pointer;
+        box-shadow: 0 0 10px var(--accent);
+        transition: transform .1s;
+    }
+
+    .slider::-moz-range-thumb {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: var(--accent);
+        cursor: pointer;
+        border: none;
+        box-shadow: 0 0 10px var(--accent);
+        transition: transform .1s;
+    }
+
+    .slider::-webkit-slider-thumb:hover,
+    .slider::-moz-range-thumb:hover {
+        transform: scale(1.1);
+    }
+
     .section {
         padding: 36px 0
     }
