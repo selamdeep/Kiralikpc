@@ -1,7 +1,7 @@
 (function () {
     var btn = document.getElementById('themeToggle');
     if (!btn) return;
-    function current() { return document.documentElement.getAttribute('data-theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); }
+    function current() { return document.documentElement.getAttribute('data-theme') || 'dark'; }
     function setTheme(t) { document.documentElement.setAttribute('data-theme', t); try { localStorage.setItem('theme', t); } catch (e) { } btn.textContent = t === 'dark' ? '🌙' : '☀️'; btn.setAttribute('aria-pressed', t === 'dark'); }
     setTheme(current());
     btn.addEventListener('click', function () { setTheme(current() === 'dark' ? 'light' : 'dark'); });
