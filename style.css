@@ -425,17 +425,13 @@
     }
 
     body::before {
-        background-image: url('knightonline-bg.jpg');
-        background-image: -webkit-image-set(url('knightonline-bg.webp') 1x, url('knightonline-bg.jpg') 1x);
-        background-image: image-set(url('knightonline-bg.webp') 1x, url('knightonline-bg.jpg') 1x);
+        background-image: url('knightonline-bg.webp');
         background-position: left center;
         mix-blend-mode: lighten;
     }
 
     body::after {
-        background-image: url('metin2-bg.jpg');
-        background-image: -webkit-image-set(url('metin2-bg.webp') 1x, url('metin2-bg.jpg') 1x);
-        background-image: image-set(url('metin2-bg.webp') 1x, url('metin2-bg.jpg') 1x);
+        background-image: url('metin2-bg.webp');
         background-position: right center;
         mix-blend-mode: lighten;
     }
@@ -443,15 +439,11 @@
     /* Mobile Optimization: Serve smaller images */
     @media (max-width: 768px) {
         body::before {
-            background-image: url('knightonline-bg.jpg');
-            background-image: -webkit-image-set(url('knightonline-bg-mobile.webp') 1x, url('knightonline-bg.jpg') 1x);
-            background-image: image-set(url('knightonline-bg-mobile.webp') 1x, url('knightonline-bg.jpg') 1x);
+            background-image: url('knightonline-bg-mobile.webp');
         }
 
         body::after {
-            background-image: url('metin2-bg.jpg');
-            background-image: -webkit-image-set(url('metin2-bg-mobile.webp') 1x, url('metin2-bg.jpg') 1x);
-            background-image: image-set(url('metin2-bg-mobile.webp') 1x, url('metin2-bg.jpg') 1x);
+            background-image: url('metin2-bg-mobile.webp');
         }
     }
 
