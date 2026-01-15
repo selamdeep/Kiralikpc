@@ -128,28 +128,7 @@ function applyPrices(src) {
         if (a.id === 'themeToggle') track('ui:theme-toggle', { to: document.documentElement.getAttribute('data-theme') });
     });
 })();
-// Background image WebP yükseltmesi (güvenli geriye dönüş)
-(function webpSwap() {
-    var webpSupported = false;
-    try {
-        webpSupported = document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0;
-    } catch (e) { }
-    if (!webpSupported) return;
-    var test1 = new Image(); var test2 = new Image(); var done = 0; var success = false;
-    function finish() {
-        done++; if (done < 2) return; if (!success) return;
-        var css = document.createElement('style');
-        css.textContent = 'body::before{background-image:url(\'knightonline-bg.webp\')} body::after{background-image:url(\'metin2-bg.webp\')}';
-        document.head.appendChild(css);
-        var og = document.getElementById('ogimg'); if (og) og.setAttribute('content', 'https://www.pattyburg.com/knightonline-bg.webp');
-        var tw = document.getElementById('twimg'); if (tw) tw.setAttribute('content', 'https://www.pattyburg.com/knightonline-bg.webp');
-    }
-    test1.onload = function () { success = true; finish(); };
-    test2.onload = function () { success = true; finish(); };
-    test1.onerror = finish; test2.onerror = finish;
-    test1.src = 'knightonline-bg.webp';
-    test2.src = 'metin2-bg.webp';
-})();
+
 // JSON-LD: Service + FAQPage
 (function addJsonLd() {
     function render() {
